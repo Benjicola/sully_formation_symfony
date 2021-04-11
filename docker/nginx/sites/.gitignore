@@ -1,0 +1,10 @@
+###> Docker ###
+/docker/database/data/*
+/docker/logs/*
+###< Docker ###
+
+!/src/bin/console
+!/src/bin/*
+/src/public/bundles/
+/src/var/
+/src/vendor/
