@@ -13,6 +13,7 @@ class HelloController extends AbstractController
      */
     public function index(): Response
     {
+        $a = 12;
         return $this->render('hello/index.html.twig', [
             'controller_name' => 'HelloController',
         ]);
