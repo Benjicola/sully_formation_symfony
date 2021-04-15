@@ -1,0 +1,48 @@
+<nav id="sidebar" class="bg-dark">
+    <div class="sidebar-header">
+        <h3>Administrator Dashboard</h3>
+    </div>
+
+    <ul class="navbar-nav mx-auto list-unstyled components">
+        <li class="nav-item {{ currentRoute is same as('app_admin_index') ? 'active' }}">
+            <a class="nav-link" href="{{ path('app_admin_index') }}" title="Click to back on your dashboard"><i class="fas fa-columns"></i> Dashboard</a>
+        </li>
+        <li class="nav-item {{ 'movie' in currentRoute ? 'active' }}">
+            <a href="#movieSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" title="Manage movies"><i class="fas fa-film"></i> Movie</a>
+            <ul class="collapse list-unstyled" id="movieSubmenu">
+                <li {{ currentRoute is same as('app_admin_movie_index') ? 'class="active"' }}>
+                    <a href="{{ path('app_admin_movie_index') }}" title="Click to see all movies">Movie list</a>
+                </li>
+                <li {{ currentRoute is same as('app_admin_movie_new') ? 'class="active"' }}>
+                    <a href="{{ path('app_admin_movie_new') }}" title="Click to add a new movie">Add a movie</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item {{ 'genre' in currentRoute ? 'active' }}">
+            <a href="#genreSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" title="Manage genres"><i class="fas fa-list"></i> Genre</a>
+            <ul class="collapse list-unstyled" id="genreSubmenu">
+                <li {{ currentRoute is same as('app_admin_genre_index') ? 'class="active"' }}>
+                    <a href="{{ path('app_admin_genre_index') }}" title="Click to see all genres">Genre list</a>
+                </li>
+                <li {{ currentRoute is same as('app_admin_genre_new') ? 'class="active"' }}>
+                    <a href="{{ path('app_admin_genre_new') }}" title="Click to add a new genre">Add a genre</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="list-unstyled components">
+        <li>
+            <a href="{{ path('app_default_index') }}" title="Ciao !"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+        </li>
+        <li>
+            <a href="#languageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" title="Switch to English"><i class="fas fa-flag"></i> English</a>
+            <ul class="collapse list-unstyled" id="languageSubmenu">
+                <li>
+                    <a href="#" title="Switch to French"><i class="far fa-flag"></i> French</a>
+                    <a href="#" title="Switch to Spain"><i class="far fa-flag"></i> Spain</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>

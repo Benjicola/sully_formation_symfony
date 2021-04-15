@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block author 'SensioTV' %}
+{% block description 'Admin dashboard useful to manage movies, genres and users.' %}
+
+{% block og_image 'https://university.sensiolabs.com/images/sensiolabs-university-fullwhite.png' %}
+{% block og_title 'Admin Dashboard' %}
+{% block og_description 'Admin dashboard useful to manage movies, genres and users.' %}
+
+{% block title 'Admin Dashboard' %}
+
+{% block body_attributes 'id="admin-index"' %}
+{% block body %}
+    {{ include('admin/_sidebar.html.twig', {'currentRoute': app.request.attributes.get('_route')}, with_context = false) }}
+
+    <section id="content" class="bg-light p-5">
+        <div class="container-fluid mt-5 mt-md-0 jumbotron">
+            <div class="row">
+                <div class="col">
+                    <h1 class="display-4 font-weight-bold">Dashboard</h1>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col">
+                    <p class="text-secondary">
+                        Need to be fulfill during the next development.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('sidebar') }}
+{% endblock %}

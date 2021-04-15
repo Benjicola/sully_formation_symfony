@@ -1,0 +1,101 @@
+{
+    "name": "sensiolabs/sensiotv",
+    "type": "project",
+    "license": "proprietary",
+    "description": "This repository is an awesome SensioLabs University project to order some cool movies for SF5 training sessions.",
+    "require": {
+        "php": "^7.4",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "ext-json": "*",
+        "ext-pdo_sqlite": "*",
+        "composer/package-versions-deprecated": "^1.11",
+        "doctrine/annotations": "^1.0",
+        "doctrine/doctrine-bundle": "^2.1",
+        "doctrine/doctrine-migrations-bundle": "^3.0",
+        "doctrine/orm": "^2.7",
+        "ramsey/uuid-doctrine": "^1.6",
+        "sensio/framework-extra-bundle": "^5.5",
+        "symfony/asset": "^5.0",
+        "symfony/console": "^5.0",
+        "symfony/dotenv": "^5.0",
+        "symfony/expression-language": "^5.0",
+        "symfony/finder": "^5.0",
+        "symfony/flex": "^1.6",
+        "symfony/form": "^5.0",
+        "symfony/framework-bundle": "^5.0",
+        "symfony/http-client": "^5.0",
+        "symfony/intl": "^5.0",
+        "symfony/mailer": "^5.0",
+        "symfony/monolog-bundle": "^3.5",
+        "symfony/notifier": "^5.0",
+        "symfony/process": "^5.0",
+        "symfony/security-bundle": "^5.0",
+        "symfony/serializer-pack": "^1.0",
+        "symfony/string": "^5.0",
+        "symfony/translation": "^5.0",
+        "symfony/twig-pack": "^1.0",
+        "symfony/validator": "^5.0",
+        "symfony/web-link": "^5.0",
+        "symfony/webpack-encore-bundle": "^1.7",
+        "symfony/yaml": "^5.0"
+    },
+    "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.3",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "squizlabs/php_codesniffer": "^3.5",
+        "symfony/debug-pack": "^1.0",
+        "symfony/maker-bundle": "^1.14",
+        "symfony/profiler-pack": "^1.0",
+        "symfony/test-pack": "^1.0"
+    },
+    "config": {
+        "platform": {
+            "php": "7.2.5"
+        },
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "replace": {
+        "paragonie/random_compat": "2.*",
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php72": "*",
+        "symfony/polyfill-php71": "*",
+        "symfony/polyfill-php70": "*",
+        "symfony/polyfill-php56": "*"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": true,
+            "require": "5.2.*"
+        }
+    }
+}

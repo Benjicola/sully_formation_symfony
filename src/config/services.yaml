@@ -1,0 +1,30 @@
+parameters:
+    locale: 'en'
+    app_locales: ['fr', '%locale%']
+    app_locales_regex: 'fr|%locale%'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        bind:
+            string $omdbToken: '%env(OMDB_TOKEN)%'
+            string $omdbHost: '%env(OMDB_HOST)%'
+            $clientSoap: '@App\Consumer\OMDb\ClientSoap'
+            $client: '@App\Consumer\OMDb\Client'
+
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{Entity,Kernel.php}'
+
+    App\Controller\:
+        resource: '../src/Controller'
+        tags:
+            - { name: controller.service_arguments }
+
+    App\Consumer\OMDb\TracableClient:
+        decorates: App\Consumer\OMDb\Client
+        arguments:
+            - '@.inner'
+        tags:
+            - {name: monolog.logger, channel: client_omdb }

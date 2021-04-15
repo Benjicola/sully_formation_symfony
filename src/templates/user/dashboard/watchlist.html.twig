@@ -1,0 +1,314 @@
+{% extends 'base.html.twig' %}
+
+{% block author 'SensioTV' %}
+{% block description 'Access to your personal watchlist.' %}
+
+{% block og_image 'https://university.sensiolabs.com/images/sensiolabs-university-fullwhite.png' %}
+{% block og_title 'My Watchlist' %}
+{% block og_description 'Access to your personal watchlist.' %}
+
+{% block title 'My Watchlist' %}
+
+{% block body_attributes 'id="user-dashboard-watchlist"' %}
+{% block body %}
+    {{ include('user/dashboard/_sidebar.html.twig', {'currentRoute': app.request.attributes.get('_route')}, with_context = false) }}
+
+    <section id="content" class="bg-light p-5">
+        <div class="container-fluid mt-5 mt-md-0 jumbotron text-white">
+            <div class="row">
+                <div class="col">
+                    <h1 class="display-4 font-weight-bold">Watchlist</h1>
+                    <p class="text-success font-weight-bold">Watch next (6 movies left)</p>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {# {{ path('app_movie_details') }}#}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/avengers.jpg') }}" alt="Avengers Sample Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Avengers: Endgame (2019) <small>- Anthony and Joe Russo</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 181 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/no-country-for-old-men.jpg') }}" alt="No Country For Old Men Sample Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">No Country For Old Men (2007) <small>- Coen Brothers</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 122 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/alien.jpg') }}" alt="Alien Sample Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Alien: 1 (1979) <small>- Ridley Scott</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 117 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/whiplash.jpg') }}" alt="Whiplash Sample Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Whiplash (2014) <small>- Damien Chazelle</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 106 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/django-unchained.jpg') }}" alt="Django Unchained Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Django Unchained (2012) <small>- Quentin Tarantino</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 165 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/full-metal-jacket.jpg') }}" alt="Full Metal Jacket Sample Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Full Metal Jacket (1987) <small>-  Stanley Kubrick</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 116 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/joker.jpg') }}" alt="Joker Sample Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Joker (2019) <small>- Todd Phillips</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 122 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col font-weight-bold">
+                    <p class="text-success">Already Watched (12 movies)</p>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/gladiator.jpg') }}" alt="Gladiator Sample Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Gladiator (2000) <small>- Ridley Scott</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 155 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/matrix.jpeg') }}" alt="Matrix Sample Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Matrix (1999) <small>-  The Wachowski Brothers</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 136 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/pulp-fiction.jpg') }}" alt="Pulp Fiction Sample Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Pulp Fiction (1994) <small>- Quentin Tarantino</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 154 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/seven.jpg') }}" alt="Seven Sample Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Seven (1995) <small>- David Fincher</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 127 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/fight-club.jpeg') }}" alt="Fight Club Sample Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Fight Club (1999) <small>- David Fincher</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 139 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/lord-of-the-rings.jpg') }}" alt="Lord Of The Rings Sample Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Lord Of The Rings (2002) <small>- Peter Jackson</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 179 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/insomnia.jpeg') }}" alt="Insomnia Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Insomnia (2002) <small>- Christopher Nolan</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 118 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/inception.jpeg') }}" alt="Inception Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Inception (2010) <small>- Christopher Nolan</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 148 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/the-dark-knight.jpeg') }}" alt="The Dark Knight Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">The Dark Knight (2008) <small>- Christopher Nolan</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 152 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/dunkirk.jpeg') }}" alt="Dunkirk Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Dunkirk (2017) <small>- Christopher Nolan</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 106 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/man-of-steel.jpeg') }}" alt="Man Of Steel Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Man Of Steel (2013) <small>- Christopher Nolan</small></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light p-1" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 143 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 p-3">
+                    <div class="card card-gradient">
+                        <a href="{# {{ path('app_movie_details') }}#}" title="See details">
+                            <img class="album-link img-fluid img-rounded-top" src="{{ asset('build/images/movie-image-samples/memento.jpeg') }}" alt="Memento Image">
+                        </a>
+                        <div class="card-body">
+                            <p class="font-weight-bold">Memento (2000) <small>- Christopher Nolan</small></p>
+                            <div class="d-flex justify-content-between align-items-center p-1">
+                                <a href="{{ path('app_movie_player') }}" class="btn btn-sm btn-outline-light" title="Watch this movie">Watch</a>
+                                <small class="text-subtitle p-3"><i class="fas fa-clock"></i> 113 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="m-5">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('sidebar') }}
+{% endblock %}

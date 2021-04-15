@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block author 'SensioTV' %}
+{% block description 'Browse your movies by genre.' %}
+
+{% block og_image 'https://university.sensiolabs.com/images/sensiolabs-university-fullwhite.png' %}
+{% block og_title 'Movies By Genre' %}
+{% block og_description 'Browse your movies by genre.' %}
+
+{% block title 'Movies By Genre' %}
+
+{% block body_attributes 'id="genre"' %}
+{% block body %}
+    <section id="central-section" class="bg-light p-5">
+        <div class="container jumbotron p-5 img-rounded">
+            <div class="row mb-5">
+                <div class="col-lg">
+                    <h1 class="display-4 font-weight-bold">Popular Movies By Genre.</h1>
+                </div>
+            </div>
+            <div class="row mb-4 text-center">
+                <div class="col-lg">
+                    <div class="row">
+                        {% for genre in genres %}
+                            <div class="col-md-3 mt-2 mb-2">
+                                <div class="card">
+                                    <a href="#" title="Click to get all top rated movies by {{ genre.name|capitalize }}">
+                                        <img src="{{ genre.poster }}" alt="{{ genre.name|capitalize }} Card">
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

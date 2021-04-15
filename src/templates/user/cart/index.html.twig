@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block author 'SensioTV' %}
+{% block description 'Access to your personal cart.' %}
+
+{% block og_image 'https://university.sensiolabs.com/images/sensiolabs-university-fullwhite.png' %}
+{% block og_title 'My Cart' %}
+{% block og_description 'Access to your personal cart.' %}
+
+{% block title 'My Cart' %}
+
+{% block body_attributes 'id="user-cart-index"' %}
+{% block body %}
+    <section id="central-section" class="bg-light p-5">
+        <div class="container jumbotron p-5 img-rounded">
+            <div class="row">
+                <div class="col">
+                    <h1 class="display-4 font-weight-bold">Your shopping cart is empty.</h1>
+                </div>
+            </div>
+            <div class="row m-5">
+                <div class="col text-center">
+                    <img class="img-fluid m-5" src="{{ asset('build/images/empty-cart.png') }}" alt="Empty Cart Logo">
+                    <p class="lead">
+                        Your Shopping Cart lives to serve. Give it purpose — fill it with some cool movies.<br> You can find a lot <a class="lead" href="{{ path('app_movie_chart_top_rated') }}" title="See all the top rated movies">here !</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

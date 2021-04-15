@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="author" content="{% block author '' %}">
+    <meta name="description" content="{% block description '' %}">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=10,chrome=1'><![endif]-->
+
+    <meta property="og:image" content="{% block og_image '' %}">
+    <meta property="og:title" content="SensioTV from SensioLabs University - {% block og_title '' %}">
+    <meta property="og:description" content="{% block og_description '' %}">
+
+    <title>SensioTV - {% block title '' %}</title>
+
+    {{ encore_entry_link_tags('app') }}
+
+    {% block stylesheets %}
+    {% endblock %}
+
+    {{ include('_favicons.html.twig', with_context = false) }}
+</head>
+
+<body>
+<header>
+    {% block header -%}
+        {{ include('_navbar.html.twig', {'currentRoute': app.request.attributes.get('_route')}, with_context = false) }}
+    {%- endblock %}
+</header>
+
+<main id="main">
+    {{ include('_flash_messages.html.twig', with_context = false) }}
+
+    <div {% block body_attributes '' %}>
+        {% block body %}
+        {% endblock %}
+    </div>
+</main>
+
+<footer>
+    {% block footer -%}
+        {{ include('_footer.html.twig', with_context = false) }}
+    {%- endblock -%}
+</footer>
+
+{{ encore_entry_script_tags('app') }}
+
+{% block javascripts -%}
+{% endblock %}
+</body>
+</html>

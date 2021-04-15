@@ -1,0 +1,49 @@
+<nav id="sidebar" class="sidebar-gradient">
+    <div class="sidebar-header">
+        <h3>What's up Sigourney ?</h3>
+    </div>
+
+    <form class="text-center">
+        <div class="sidebar-form-wrapper">
+            <label for="_search_help" class="sr-only">Search</label>
+            <input type="text" id="_search_help" name="_search_help" class="sidebar-input" placeholder="&#xF002; What do you need help with ?">
+        </div>
+    </form>
+
+    <div class="text-center m-4">
+        <div id="fb-root"></div>
+        <div class="fb-like" data-href="" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+    </div>
+
+    <div>
+        <ul class="navbar-nav mx-auto list-unstyled components">
+            <li class="nav-item {{ currentRoute is same as('app_user_dashboard_watchlist') ? 'active' }}">
+                <a class="nav-link" href="{{ path('app_user_dashboard_watchlist') }}" title="Take a look on your watchlist"><i class="fas fa-align-left"></i> Watchlist</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" title="See your orders history"><i class="fas fa-tv"></i> Orders</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" title="Wanna change your current subscription ?"><i class="fas fa-heart"></i> Subscriptions</a>
+            </li>
+            <li class="nav-item {{ currentRoute is same as('app_user_dashboard_profile') ? 'active' }}">
+                <a class="nav-link" href="{{ path('app_user_dashboard_profile') }}" title="Access to your account and profile preferences"><i class="fas fa-user-cog"></i> Profile</a>
+            </li>
+        </ul>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="{{ path('app_security_logout') }}" title="Ciao !"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+            </li>
+            <li>
+                <a href="#languageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" title="Switch to English"><i class="fas fa-flag"></i> English</a>
+                <ul class="collapse list-unstyled" id="languageSubmenu">
+                    <li>
+                        <a href="#" title="Switch to French"><i class="far fa-flag"></i> French</a>
+                        <a href="#" title="Switch to Spain"><i class="far fa-flag"></i> Spain</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

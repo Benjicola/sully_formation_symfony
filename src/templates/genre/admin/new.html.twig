@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block author 'SensioTV' %}
+{% block description 'Create a new genre which will be directly accessible by an user.' %}
+
+{% block og_image 'https://university.sensiolabs.com/images/sensiolabs-university-fullwhite.png' %}
+{% block og_title 'Admin Dashboard - Create a new genre' %}
+{% block og_description 'Create a new genre which will be directly accessible by an user.' %}
+
+{% block title 'Admin Dashboard - Create a new genre' %}
+
+{% block body_attributes 'id="genre-admin-new"' %}
+{% block body %}
+    {{ include('admin/_sidebar.html.twig', {'currentRoute': app.request.attributes.get('_route')}, with_context = false) }}
+
+    <section id="content" class="bg-light p-5">
+        <div class="container mt-5 mt-md-0 jumbotron">
+            <div class="row mb-5">
+                <div class="col-lg">
+                    <h1 class="display-4 font-weight-bold">Create a new genre.</h1>
+                </div>
+            </div>
+            <div class="row mb-5 p-3">
+                <div class="col-lg img-rounded bg-light p-3">
+                    {{ include('genre/admin/_form.html.twig', {'form': form}, with_context = false) }}
+                </div>
+            </div>
+            <div class="row p-3">
+                <ul class="list-unstyled">
+                    <li><a href="{{ path('app_admin_genre_index') }}" title="Click to back on genre list"><i class="fas fa-arrow-left"></i> Back to genre list</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('sidebar') }}
+{% endblock %}

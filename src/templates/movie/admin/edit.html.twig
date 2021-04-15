@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block author 'SensioTV' %}
+{% block description 'Edit a movie and its information.' %}
+
+{% block og_image 'https://university.sensiolabs.com/images/sensiolabs-university-fullwhite.png' %}
+{% block og_title 'Admin Dashboard - Edit a movie' %}
+{% block og_description 'Edit a movie and its information.' %}
+
+{% block title 'Admin Dashboard - Edit a movie' %}
+
+{% block body_attributes 'id="movie-admin-edit"' %}
+{% block body %}
+    {{ include('admin/_sidebar.html.twig', {'currentRoute': app.request.attributes.get('_route')}, with_context = false) }}
+
+    <section id="content" class="bg-light p-5">
+        <div class="container mt-5 mt-md-0 jumbotron">
+            <div class="row mb-5">
+                <div class="col-lg">
+                    <h1 class="display-4 font-weight-bold">Edit <span class="text-success">{{ movie.title }}</span> movie.</h1>
+                </div>
+            </div>
+            <div class="row mb-5 p-3">
+                <div class="col-lg img-rounded bg-light p-3">
+                    {{ include('movie/admin/_form.html.twig', {'form': form, 'button_label': 'Save your modification'}, with_context = false) }}
+                    {{ include('movie/admin/_delete_form.html.twig', {'movie_uuid': movie.uuid}, with_context = false) }}
+                </div>
+            </div>
+            <div class="row p-3">
+                <ul class="list-unstyled">
+                    <li><a href="{{ path('app_admin_movie_index') }}" title="Click to back on movie list"><i class="fas fa-arrow-left"></i> Back to movie list</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('sidebar') }}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block author 'SensioTV' %}
+{% block description 'Movie Player.' %}
+
+{% block og_image 'https://university.sensiolabs.com/images/sensiolabs-university-fullwhite.png' %}
+{% block og_title 'Player' %}
+{% block og_description 'Movie Player.' %}
+
+{% block title 'Player' %}
+
+{% block stylesheets %}
+    <style>
+        iframe{width:100%;height:100%;border:none}.iframe-container{position:absolute;width:100%;height:100%;top:0;left:0;bottom:0;right:0;display:flex;flex-direction:column;justify-content:center;align-items:center}
+    </style>
+{% endblock %}
+
+{% block body_attributes 'id="movie-player"' %}
+{% block body %}
+    <!-- Fake player -->
+    <div class="iframe-container">
+        <iframe src="http://www.youtube.com/embed/pBXOQbmdqxw?modestbranding=1&autoplay=1&mute=1&controls=1&fs=0&loop=1&rel=0&showinfo=0&disablekb=1" allow="autoplay; fullscreen"></iframe>
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

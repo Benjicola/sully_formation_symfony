@@ -1,0 +1,159 @@
+{% extends 'base.html.twig' %}
+
+{% block author 'SensioTV' %}
+{% block description 'Latest movies available on SensioTV.' %}
+
+{% block og_image 'https://university.sensiolabs.com/images/sensiolabs-university-fullwhite.png' %}
+{% block og_title 'Latest Movies' %}
+{% block og_description 'Latest movies available on SensioTV.' %}
+
+{% block title 'Latest Movies' %}
+
+{% block body_attributes 'id="movie-chart-latest"' %}
+{% block body %}
+    <section id="central-section" class="bg-light p-5">
+        <div class="container jumbotron p-5 img-rounded">
+            <div class="row mb-5">
+                <div class="col-lg">
+                    <h1 class="display-4 font-weight-bold">Latest Movies.</h1>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-3 text-center text-md-left pb-3">
+                    <p class="lead font-weight-bold">Latest Movies By Genre</p>
+                    <ul class="list-unstyled">
+                        {% for genre in genres %}
+                            <li><a href="#" title="Choose your movie by {{ genre.name }} genre">{{ genre.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-md-9 table-responsive img-rounded bg-light p-4">
+                    <p class="font-weight-bold">December</p>
+
+                    <!-- TODO: Get real latest movies -->
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <a href="{{ path('app_movie_trailer') }}" title="See Star Wars trailer" class="album-link">
+                                <img height="209" width="140" alt="Star Wars: L'ascension de Skywalker (2019) Poster" title="Star Wars: L'ascension de Skywalker (2019)" src="https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_UY209_CR0,0,140,209_AL_.jpg">
+                            </a>
+                        </div>
+                        <div class="col-lg-9">
+                            <a href="{# {{ path('app_movie_details') }} #}" title="Click to see the movie details"><h6 class="m-1 font-weight-bold">Star Wars: L'ascension de Skywalker (2019)</h6></a>
+                            <small class="text-success font-weight-bold m-1">General | 141 min | Action, Adventure, Fantasy, Sci-Fi</small>
+                            <p class="ml-1 mr-1 mt-3 mb-2"><span class="text-muted">Two young British privates during the First World War are given an impossible mission: deliver a message deep in enemy territory that will stop 1,600 men, and one of the soldier's brothers, from walking straight into a deadly trap.</span></p>
+                            <p class="m-1"><span class="font-weight-bold">Director:</span> <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/J._J._Abrams" title="See this director">J. J. Abrams.</a></p>
+                            <p class="m-1">
+                                <span class="font-weight-bold">Stars:</span>
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Adam_Driver" title="See this actor">Adam Driver</a>,
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Daisy_Ridley" title="See this actress">Daisy Ridley</a>,
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Billie_Lourd" title="See this actress">Billie Lourd</a>,
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Carrie_Fisher" title="See this actor">Carrie Fisher</a>
+                            </p>
+                            <a href="{{ path('app_user_cart_index') }}" title="Add this movie to your cart" class="btn btn-xs btn-dark m-1" role="button"><i class="fas fa-plus"></i> Add to cart: <b>19,99€</b></a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <a href="{{ path('app_movie_trailer') }}" title="See 1917 trailer" class="album-link">
+                                <img height="209" width="140" alt="1917 (2019) Poster" title="1917 Poster" src="https://m.media-amazon.com/images/M/MV5BOTdmNTFjNDEtNzg0My00ZjkxLTg1ZDAtZTdkMDc2ZmFiNWQ1XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_UX182_CR0,0,182,268_AL_.jpg">
+                            </a>
+                        </div>
+                        <div class="col-lg-9">
+                            <a href="{# {{ path('app_movie_details') }} #}" title="Click to see the movie details"><h6 class="m-1 font-weight-bold">1917 (2019)</h6></a>
+                            <small class="text-success font-weight-bold m-1">R | 118 min | Drama, War</small>
+                            <p class="ml-1 mr-1 mt-3 mb-2"><span class="text-muted">The surviving Resistance faces the First Order once more in the final chapter of the Skywalker saga.</span></p>
+                            <p class="m-1"><span class="font-weight-bold">Director:</span> <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Sam_Mendes" title="See this director">Sam Mendes</a></p>
+                            <p class="m-1">
+                                <span class="font-weight-bold">Stars:</span>
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Andrew_Scott_(acteur)" title="See this actor">Andrew Scott</a>,
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Benedict_Cumberbatch" title="See this actor">Benedict Cumberbatch</a>,
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Mark_Strong" title="See this actor">Mark Strong</a>,
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Richard_Madden" title="See this actor">Richard Madden</a>
+                            </p>
+                            <a href="{{ path('app_user_cart_index') }}" title="Add this movie to your cart" class="btn btn-xs btn-dark m-1" role="button"><i class="fas fa-plus"></i> Add to cart: <b>19,99€</b></a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <a href="{{ path('app_movie_trailer') }}" title="See The Grudge trailer" class="album-link">
+                                <img class="poster shadowed" height="209" width="140" alt="The Grudge (2020) Poster" title="The Grudge (2020)" src="https://m.media-amazon.com/images/M/MV5BMjY3NWZmOTktMmVhZi00M2Q1LTg2MmQtOGE2NmE3MWNlZjY3XkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_UY209_CR0,0,140,209_AL_.jpg">
+                            </a>
+                        </div>
+                        <div class="col-lg-9">
+                            <a href="{# {{ path('app_movie_details') }} #}" title="Click to see the movie details"><h6 class="m-1 font-weight-bold">The Grudge (2020)</h6></a>
+                            <small class="text-success font-weight-bold m-1">R | 94 min | Horror, Mystery</small>
+                            <p class="ml-1 mr-1 mt-3 mb-2"><span class="text-muted">A house is cursed by a vengeful ghost that dooms those who enter it with a violent death.</span></p>
+                            <p class="m-1"><span class="font-weight-bold">Director:</span> <a class="text-xs-subtitle" href="https://en.wikipedia.org/wiki/Nicolas_Pesce" title="See this director">Nicolas Pesce</a></p>
+                            <p class="m-1">
+                                <span class="font-weight-bold">Stars:</span>
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Betty_Gilpin" title="See this actress">Betty Gilpin</a>,
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Andrea_Riseborough" title="See this actress">Andrea Riseborough</a>,
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/William_Sadler" title="See this actor">William Sadler</a>,
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Lin_Shaye" title="See this actress">Lin Shaye</a>
+                            </p>
+                            <a href="{{ path('app_user_cart_index') }}" title="Add this movie to your cart" class="btn btn-xs btn-dark m-1" role="button"><i class="fas fa-plus"></i> Add to cart: <b>19,99€</b></a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <a href="{{ path('app_movie_trailer') }}" title="See Bad Boys for Life trailer" class="album-link">
+                                <img class="poster shadowed" height="209" width="140" alt="Bad Boys for Life (2020) Poster" title="Bad Boys for Life (2020)" src="https://m.media-amazon.com/images/M/MV5BZjI1ZWYyMTYtZGYyNS00ODdhLWFmNGMtODZiYzgxOGNmNjZjXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UY209_CR0,0,140,209_AL_.jpg">
+                            </a>
+                        </div>
+                        <div class="col-lg-9">
+                            <a href="{# {{ path('app_movie_details') }} #}" title="Click to see the movie details"><h6 class="m-1 font-weight-bold">Bad Boys for Life (2020)</h6></a>
+                            <small class="text-success font-weight-bold m-1">General | 113 min | Action, Comedy, Crime</small>
+                            <p class="ml-1 mr-1 mt-3 mb-2"><span class="text-muted">Marcus Burnett is now a police inspector and Mike Lowery is in a midlife crisis. They unite again when an Albanian mercenary, whose brother they killed, promises them an important bonus.</span></p>
+                            <p class="m-1"><span class="font-weight-bold">Directors:</span> <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Adil_El_Arbi" title="See this director">Adil El Arbi</a>, <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Bilall_Fallah" title="See this director">Bilall Fallah</a></p>
+                            <p class="m-1">
+                                <span class="font-weight-bold">Stars:</span>
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Vanessa_Hudgens" title="See this actress">Vanessa Hudgens</a>,
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Will_Smith" title="See this actor">Will Smith</a>,
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Alexander_Ludwig" title="See this actor">Alexander Ludwig</a>,
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Joe_Pantoliano" title="See this actor">Joe Pantoliano</a>
+                            </p>
+                            <a href="{{ path('app_user_cart_index') }}" title="Add this movie to your cart" class="btn btn-xs btn-dark m-1" role="button"><i class="fas fa-plus"></i> Add to cart: <b>19,99€</b></a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <a href="{{ path('app_movie_trailer') }}" title="See Bad Boys for Life trailer" class="album-link">
+                                <img class="poster shadowed" height="209" width="140" alt="Jumanji: Next Level (2019) Poster" title="Jumanji: Next Level (2019)" src="https://m.media-amazon.com/images/M/MV5BOTVjMmFiMDUtOWQ4My00YzhmLWE3MzEtODM1NDFjMWEwZTRkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UY209_CR0,0,140,209_AL_.jpg">
+                            </a>
+                        </div>
+                        <div class="col-lg-9">
+                            <a href="{# {{ path('app_movie_details') }} #}" title="Click to see the movie details"><h6 class="m-1 font-weight-bold">Jumanji: Next Level (2019)</h6></a>
+                            <small class="text-success font-weight-bold m-1">General | 123 min | Action, Adventure, Comedy, Fantasy</small>
+                            <p class="ml-1 mr-1 mt-3 mb-2"><span class="text-muted">In Jumanji: The Next Level, the gang is back but the game has changed. As they return to rescue one of their own, the players will have to brave parts unknown from arid deserts to snowy mountains, to escape the world's most dangerous game..</span></p>
+                            <p class="m-1"><span class="font-weight-bold">Director:</span> <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Jake_Kasdan" title="See this director">Jake Kasdan</a></p>
+                            <p class="m-1">
+                                <span class="font-weight-bold">Stars:</span>
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Dwayne_Johnson" title="See this actor">Dwayne Johnson</a>,
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Jack_Black" title="See this actor">Jack Black</a>,
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Kevin_Hart" title="See this actor">Kevin Hart</a>,
+                                <a class="text-xs-subtitle" href="https://fr.wikipedia.org/wiki/Karen_Gillan" title="See this actress">Karen Gillan</a>
+                            </p>
+                            <a href="{{ path('app_user_cart_index') }}" title="Add this movie to your cart" class="btn btn-xs btn-dark m-1" role="button"><i class="fas fa-plus"></i> Add to cart: <b>19,99€</b></a>
+                        </div>
+                    </div>
+
+                    <!-- Paginator -->
+                    <nav class="m-4">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

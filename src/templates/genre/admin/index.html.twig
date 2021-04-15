@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block author 'SensioTV' %}
+{% block description 'Admin dashboard to manage genres.' %}
+
+{% block og_image 'https://university.sensiolabs.com/images/sensiolabs-university-fullwhite.png' %}
+{% block og_title 'Admin Dashboard - Genres' %}
+{% block og_description 'Admin dashboard to manage genres.' %}
+
+{% block title 'Admin Dashboard - Genres' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('tablesorter') }}
+{% endblock %}
+
+{% block body_attributes 'id="genre-admin-index"' %}
+{% block body %}
+    {{ include('admin/_sidebar.html.twig', {'currentRoute': app.request.attributes.get('_route')}, with_context = false) }}
+
+    <section id="content" class="bg-light p-5">
+        <div class="container-fluid mt-5 mt-md-0 jumbotron">
+            <div class="row mb-5">
+                <div class="col-lg">
+                    <h1 class="display-4 font-weight-bold">Genre Dashboard.</h1>
+                </div>
+            </div>
+            <div class="row mb-5 p-3">
+                <div class="col-lg table-responsive img-rounded bg-light p-3">
+                    <table id="admin-genre-index-table" class="table table-hover table-striped tablesorter tablesorter-bootstrap text-center">
+                        <thead>
+                        <tr>
+                            <th>Poster</th>
+                            <th>Id</th>
+                            <th>UUID</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Created At</th>
+                            <th>Updated At</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for genre in genres %}
+                            <tr>
+                                <td><img src="{{ genre.poster }}" width="120" height="70" alt="{{ genre.name ~ ' Poster.'}}"></td>
+                                <td>{{ genre.id }}</td>
+                                <td>{{ genre.uuid }}</td>
+                                <td>{{ genre.name }}</td>
+                                <td><span class="text-muted">{{ genre.description ? genre.description : 'N/A' }}</span></td>
+                                <td><span class="text-muted">{{ genre.createdAt ? genre.createdAt|date('Y-m-d H:i:s') : 'N/A' }}</span></td>
+                                <td><span class="text-muted">{{ genre.updatedAt ? genre.updatedAt|date('Y-m-d H:i:s') : 'N/A' }}</span></td>
+                                <td>
+                                    <a href="{{ path('app_admin_genre_edit', {'uuid': genre.uuid}) }}" title="Go to an edit form and update this genre"><i class="fas fa-pencil-alt"></i> Edit</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="8"><span class="text-danger">No records found.</span></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row p-3">
+                <ul class="list-unstyled">
+                    <li><a href="{{ path('app_admin_genre_new') }}" title="Go to a new creation form"><i class="fas fa-plus-circle"></i> Create a new genre</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('tablesorter') }}
+    {{ encore_entry_script_tags('sidebar') }}
+{% endblock %}
